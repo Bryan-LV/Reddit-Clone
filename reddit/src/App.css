@@ -1,0 +1,182 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+}
+
+/* nav */
+nav {
+  text-align: center;
+}
+
+.navbar-list{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center
+}
+.navbar-list{
+  display: flex;
+  list-style: none;
+  padding:0;
+}
+
+@media (min-width:700px){
+  nav{
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+
+.navbar-item{
+  padding:0 10px;
+}
+
+.hero{
+  height:100vh;
+  width:100vw;
+  background-image: url('./images/waterfall.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after{
+  content:'';
+  display: block;
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.hero-text{
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25vh;
+}
+
+.hero-title{
+  margin:0;
+  font-size: 3.5rem;
+  color:white;
+}
+.hero-subtitle{
+  color:white;
+  font-size: 1rem;
+}
+
+.hero button{
+  width:180px;
+  padding:14px 0;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin:15px;
+  cursor: pointer;
+  border:none;
+}
+
+
+.signup-btn{
+  background-color: #418eb3;
+}
+
+.signup-hero-link .signup-btn{
+  color:white;
+  text-decoration: none;
+}
+
+.login-btn{
+  background-color: white;
+}
+
+.login-btn a {
+  color:#202020;
+  text-decoration: none;
+}
+
+
+/* user signup */
+
+.signup-form{
+  width:100vw;
+  height:100vh;
+  background-image: url('./images/bridge-daylight-environment-775201.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.signup-form::after{
+  content:'';
+  display: block;
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: rgba(0,0,0,.5);
+}
+
+.signup-form-inner-wrapper{
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255,255,255,.2);
+  max-width:500px;
+  height:100vh;
+  margin: auto;
+}
+
+.signup-form input{
+  min-width: 150px;
+  width:50%;
+  height:35px;
+  margin:10px 0;
+  padding:20px 10px;
+}
+
+.signup-form-title{
+  font-size:2.4rem;
+  color:white;
+  margin-bottom: 25px;
+}
+
+input{
+  font-size: 0.9rem;
+}
+
+input::placeholder{
+  font-size: 0.9rem;
+}
+
+.signup-form-btn{
+  width:150px;
+  margin-top: 20px;
+  padding:16px 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.signup-form-btn:hover{
+  background-color: grey;
+}
