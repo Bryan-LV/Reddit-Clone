@@ -18,8 +18,13 @@ export default function Home(props) {
 
   return (
     <div className="home">
-      <h1>Welcome to Reddit Homepage!</h1>
-      {createPosts()}
+      <div className="user-container">
+        <div className="home-user-avatar"></div>
+        <h1 className="home-user-name">Username</h1>
+      </div>
+      <div className="post-container">
+        {createPosts()}
+      </div>
     </div>
   )
 }
