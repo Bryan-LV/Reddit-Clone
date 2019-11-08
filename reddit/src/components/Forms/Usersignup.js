@@ -1,5 +1,6 @@
 import React,{ useState } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 export default function UserSignup(props) {
   const [name,setName] = useState('')
@@ -15,13 +16,17 @@ export default function UserSignup(props) {
   }
 
   return (
-    <form className="signup-form" onSubmit={handleSubmit}>
-      <div className="signup-form-inner-wrapper">
-        <h2 className="signup-form-title">Sign Up and Enjoy!</h2>
+    <form className="signup-form form-wrapper" onSubmit={handleSubmit}>
+      <div className="signup-form-inner-wrapper form-inner-wrapper">
+        <h2 className="signup-form-title">Create an account</h2>
+        <label htmlFor="name">Name</label>
         <input type="text" placeholder="Your Name" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)}/>
+        <label htmlFor="username">Username</label>
         <input type="text" placeholder="Enter a Username" name="username" id="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+        <label htmlFor="password">Password</label>
         <input type="text" placeholder="Create password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-        <button className="signup-form-btn">Sign Up</button>
+        <button className="signup-form-btn form-btn">Sign Up</button>
+        <Link to="/login" className="greyed-link">Already have an account?</Link>
       </div>
     </form>
   )

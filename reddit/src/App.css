@@ -134,76 +134,65 @@ nav {
   margin-left: 35px;
 }
 
+/* Forms */
+.form-wrapper{
+  height:100vh;
+  background-color: var(--darkblue);
+  padding-top: 10vh;
+}
+
+.form-wrapper h2{
+  margin:0;
+  padding-bottom: 26px;
+  font-size:2.8rem;
+}
+
+.form-inner-wrapper{
+  height:500px;
+  width:90%;
+  max-width:650px;
+  margin:auto;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding:30px;
+}
+
+.form-inner-wrapper label{
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-inner-wrapper input{
+  width:100%;
+  display: block;
+  height:40px;
+  line-height: 0;
+  border:2px solid rgba(0,0,0,.2);
+  border-radius: 6px;
+  padding-left: 10px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.form-inner-wrapper .form-btn{
+  height:40px;
+  width:120px;
+  margin-top: 10px;
+  border:none;
+  border-radius: 4px;
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.greyed-link{
+  display: block;
+  color:grey;
+  padding-top: 20px;
+}
+
 /* user signup */
 
-.signup-form{
-  width:100vw;
-  height:100vh;
-  background-image: url('./images/bridge-daylight-environment-775201.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.signup-form::after{
-  content:'';
-  display: block;
-  width:100%;
-  height:100%;
-  position: absolute;
-  top:0;
-  left:0;
-  background-color: rgba(0,0,0,.5);
-}
-
-.signup-form-inner-wrapper{
-  position: relative;
-  z-index: 1000;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255,255,255,.2);
-  max-width:500px;
-  height:100vh;
-  margin: auto;
-}
-
-.signup-form input{
-  min-width: 150px;
-  width:50%;
-  height:35px;
-  margin:10px 0;
-  padding:20px 10px;
-}
-
-.signup-form-title{
-  font-size:2.4rem;
-  color:white;
-  margin-bottom: 25px;
-}
-
-input{
-  font-size: 0.9rem;
-}
-
-input::placeholder{
-  font-size: 0.9rem;
-}
-
-.signup-form-btn{
-  width:150px;
-  margin-top: 20px;
-  padding:16px 0;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in;
-}
-
-.signup-form-btn:hover{
-  background-color: grey;
-}
 
 /* Home */
 
