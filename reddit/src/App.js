@@ -6,14 +6,12 @@ import Usersignup from './components/Forms/Usersignup'
 import Login from './components/Forms/Login';
 import NewPost from './components/Posts/newPost';
 import Home from './components/Home/Home';
-import Nav from './components/Nav';
 
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav/>
         <Route exact path="/" component={Hero}/>
         <Route path='/signup' component={Usersignup}/>
         <Route path='/login' component={Login}/>

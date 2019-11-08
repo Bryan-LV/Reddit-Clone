@@ -18,7 +18,7 @@ export default function NewPost(props) {
       <form className="new-post-form">
         <h1 className="new-post-title">Create a new post</h1>
         <input type="text" name="title" placeholder="Enter a title for your post" value={title} onChange={(e) => setTitle(e.target.value)}/>
-        <input type="text" name="desc" placeholder="Body of you post" value={desc} onChange={(e) => setDesc(e.target.value)}/>
+        <textarea placeholder="Body of you post" value={desc} onChange={(e) => setDesc(e.target.value)}></textarea>
         <button type="submit" className="create-post-btn">Create Post</button>
       </form>
     </div>
