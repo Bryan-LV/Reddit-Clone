@@ -33,7 +33,7 @@ export default function UserSignup(props) {
         <label htmlFor="bio">Story time</label>
         <textarea cols={20} rows={20} name="bio" id="bio" value={bio} onChange={(e) => setBio(e.target.value)}/>
         <button className="signup-form-btn form-btn">Sign Up</button>
-        <Link to="/login" className="greyed-link">Already have an account?</Link>
+        <Link to="/auth" className="greyed-link">Already have an account?</Link>
       </div>
     </form>
   )

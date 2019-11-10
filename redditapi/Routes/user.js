@@ -6,23 +6,10 @@ const {check, validationResult} = require('express-validator');
 const router = express.Router();
 
 
-//Models
+//Model
 const User = require('../Schema/user.model');
 
-// USERS
-
-router.get('/user', function(request,response){
-  User.find().then(user => response.send(user));
-})
-
-router.post('/login', function(request,response){
-  const username = request.body.username;
-  const password = request.body.password;
-  User.find({username: username, password:password})
-    .then(res => {});
-})
-
-router.post('/signup', [
+router.post('/', [
   check('name', 'Please enter your name').not().isEmpty(),
   check('email', 'Please enter valid email').isEmail(),
   check('password','Please enter a password 6 characters or more').isLength({ min:6 })

@@ -17,8 +17,12 @@ mongoose.connection.once('open', () => console.log('Database has connected'));
 
 // Users
 app.use('/signup', require('./Routes/user'))
-app.use('/login', require('./Routes/user'))
-app.use('/user', require('./Routes/user'))
+app.use('/auth', require('./Routes/auth'))
+
+app.get('/user', function(request,response){
+  User.find().then(user => response.send(user));
+})
+
 
 // POSTS
 app.use('/post', require('./Routes/post'))
