@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('config');
+const crypt = require('bcrypt');
+const {check, validationResult} = require('express-validator');
 const app = express();
 
 // middleware 
@@ -34,20 +36,47 @@ app.post('/login', function(request,response){
     .then(res => {});
 })
 
-app.post('/signup', function(request,response){
-  const name = request.body.name;
-  const username = request.body.username;
-  const password = request.body.password;
+app.post('/signup', [
+  check('name', 'Please enter your name').not().isEmpty(),
+  check('email', 'Please enter valid email').isEmail(),
+  check('password','Please enter a password 6 characters or more').isLength({ min:6 })
+], async function(request,response){
+      const errors = validationResult(request);
+      
+      // check if errors exist
+      if(!errors.isEmpty()){
+        return response.status(400).json({errors: errors.array()});
+      }
 
-  const newUser = new User({
-    name,
-    username,
-    password
-  })
 
-  newUser.save()
-    .then(user => response.json(user))
-    .catch(err => console.error(err));
+      const { name, username, email, password, bio } = request.body;
+
+      try {
+        // check if email exists
+        let user = await User.findOne({email});
+        if(user){
+          return response.status(400).json({msg: 'This user already exists'})
+        }
+
+        user = new User({
+          name,
+          email,
+          username,
+          password,
+          bio
+        })
+
+        // Hash the password
+        const salt = await crypt.genSalt(10);
+        user.password = await crypt.hash(password, salt);
+
+        await user.save()
+        response.send('New User saved to DB');
+
+      } catch (error) {
+        console.error(error.message);
+        response.status(500).send('Ohh, this is a little embarrassing...')
+      }
 })
 
 // POSTS
